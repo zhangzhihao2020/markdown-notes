@@ -282,7 +282,7 @@ git push -u origin master
 
 参考网址https://www.jianshu.com/p/e61c4ceec96c
 
-##　11.Ubuntu18.04 LTS 升级Python3.8
+## 11.Ubuntu18.04 LTS 升级Python3.8
 
 #### 1、下载源码
 
