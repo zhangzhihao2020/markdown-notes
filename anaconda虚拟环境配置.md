@@ -17,6 +17,10 @@ conda activate DRL
 # 推出conda虚拟环境
 conda deactivate
 
+#Ubuntu关闭anaconda自动进入base虚拟环境
+
+conda config --set auto_activate_base false
+
 ```
 
 ### 3.显示安装过的虚拟环境

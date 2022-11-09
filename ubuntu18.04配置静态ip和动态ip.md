@@ -1,6 +1,6 @@
 # ubuntu18.04配置静态ip和动态ip
 ## 1.ubuntu18.04配置静态ip
-查找netplan目录下默认的网络配置文件，文件后缀为.yaml，我的是叫01-network-manager-all.yaml的文件。如果没有可以使用sudo gedit 01-network-manager-all.yam自己创建。
+查找netp查找netplan目录下默认的网络配置文件，文件后缀为.yaml，我的是叫01-network-manager-all.yaml的文件。如果没有可以使用sudo gedit 01-network-manager-all.yam自己创建和。
 ``` 
 cd /etc/netplan
 ls
@@ -10,31 +10,18 @@ ls
 ip address
 ```
 
-打开`xdg-open 01-network-manager-all.yaml`并编辑网络配置文件`01-network-manager-all.yaml`，内容如下：
+打开`sudo gedit 01-network-manager-all.yaml`并编辑网络配置文件`01-network-manager-all.yaml`，内容如下：
 ```
 network:
   version: 2
   renderer: NetworkManager
   ethernets:
-    enp0s31f6:
+    enp3s0:
       dhcp4: no
-      addresses: [172.20.60.193/24]
+      addresses: [172.20.60.199/24]
       gateway4: 172.20.60.1
       nameservers: 
         addresses: [202.202.0.33]
-```
-```
-# Let NetworkManager manage all devices on this system
-network:
-  version: 2
-  renderer: NetworkManager
-  ethernets:
-    enp0s31f6:
-      dhcp4: no
-      addresses: [192.168.1.100/24]
-      gateway4: 192.168.1.1
-      nameservers: 
-        addresses: [192.168.1.1]
 ```
 使用命令，使静态ip生效。
 ```
